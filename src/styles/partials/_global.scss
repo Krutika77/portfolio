@@ -1,0 +1,8 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+@use "./typography" as *;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
