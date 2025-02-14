@@ -1,0 +1,75 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.hero {
+  background-color: $background-light;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    @include desktop {
+      max-width: 1280px; // Restrict content width on desktop
+      flex-wrap: wrap;
+      gap: 0;
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100vw;
+    padding-bottom: 12px;
+
+    @include tablet {
+      flex-direction: row;
+    }
+
+    @include desktop {
+      max-width: 1280px;
+    }
+  }
+
+  &__image {
+    &--top {
+      display: block; // Show in mobile view
+      width: 100%;
+    }
+
+    &--left {
+      display: none; // Hide in mobile view
+    }
+
+    &--text {
+      display: block; // Show in all views
+      width: 60%;
+    }
+
+    @include tablet {
+      &--top {
+        display: none; // Hide in tablet view
+      }
+
+      &--left {
+        display: block; // Show in tablet view
+        width: 60%;
+      }
+
+      &--text {
+        width: 30%;
+      }
+    }
+  }
+}

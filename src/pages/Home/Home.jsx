@@ -1,9 +1,10 @@
 import "./Home.scss";
+import Hero from "../../components/Hero/Hero";
 
 function Home() {
   return (
     <main>
-      <h2>Home</h2>
+      <Hero />
     </main>
   );
 }
