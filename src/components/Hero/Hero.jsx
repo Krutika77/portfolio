@@ -25,6 +25,15 @@ function Hero() {
           />
         </div>
       </div>
+      <div className="hero__links">
+        <span className="linkedin">
+          <a href="https://www.linkedin.com/in/krutika-desai-kd/">LINKEDIN </a>
+        </span>
+        <span> | </span>
+        <span className="git">
+          <a href="https://github.com/Krutika77">GIT HUB</a>
+        </span>
+      </div>
     </section>
   );
 }
