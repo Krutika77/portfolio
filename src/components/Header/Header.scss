@@ -1,3 +1,92 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/partials/variables" as *;
+@use "../../styles/partials/typography";
+
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  background-color: $background-light;
+  padding: 1rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  &__logo {
+    font-family: "Playfair Display BoldItalic", serif;
+    color: $text;
+    &:hover {
+      color: $orange;
+      cursor: pointer;
+    }
+  }
+
+  &__nav {
+    display: none; // Hidden on mobile
+
+    @include tablet {
+      display: block; // Visible on tablet and desktop
+    }
+
+    &-list {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &-item {
+      display: inline-block;
+      font-family: "Source Sans Pro Semibold", sans-serif;
+    }
+
+    &-link {
+      color: $gray;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $orange;
+      }
+    }
+  }
+
+  &__hamburger {
+    display: block; // Visible on mobile
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @include tablet {
+      display: none; // Hidden on tablet and desktop
+    }
+
+    &-line {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: $text;
+      margin: 5px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    &:hover &-line {
+      background-color: $orange;
+    }
+  }
+}
